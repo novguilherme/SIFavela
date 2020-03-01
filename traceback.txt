@@ -1,0 +1,48 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+Compiling ATL code at <string>:2
+  File "game/script.rpy", line 57, in script call
+    hon "Ô, na moral memo, alguém ae sabe ler japonês pra dizer o que está escrito?"
+  File "renpy/common/00console.rpy", line 807, in script call
+    python in _console:
+NameError: name 'xaligm' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 57, in script call
+    hon "Ô, na moral memo, alguém ae sabe ler japonês pra dizer o que está escrito?"
+  File "renpy/common/00console.rpy", line 807, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\ast.py", line 1183, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\ast.py", line 1153, in show_imspec
+    atl=atl)
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\exports.py", line 717, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\display\core.py", line 1070, in add
+    thing._show()
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\display\transform.py", line 1048, in _show
+    super(ATLTransform, self)._show()
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\display\transform.py", line 1014, in _show
+    self.update_state()
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\display\transform.py", line 1036, in update_state
+    fr = self.execute(self, self.st, self.at)
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\atl.py", line 521, in execute
+    block = self.compile()
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\atl.py", line 489, in compile
+    block = self.atl.compile(self.context)
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\atl.py", line 684, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\atl.py", line 897, in compile
+    child = ctx.eval(expr)
+  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\atl.py", line 246, in eval
+    return eval(expr, renpy.store.__dict__, self.context)  # @UndefinedVariable
+  File "<string>", line 1, in <module>
+NameError: name 'xaligm' is not defined
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+SIFavela 1.0
+Sat Feb 29 22:47:57 2020

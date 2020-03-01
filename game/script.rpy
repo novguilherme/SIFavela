@@ -1,33 +1,73 @@
-﻿# The script of the game goes in this file.
+#Personagens
+##Honoka
+define hon = Character("Honoka")
+###Honoka Uniforme Inverno
+image iHon UI3 = "images/chara/honoka/honoka_01_03.png"
+image iHon UI4 = "images/chara/honoka/honoka_01_04.png"
+##Umi
+define umi = Character("Umi")
+###Umi Uniforme Inverno
+image iUmi UI4 = "images/chara/umi/umi_01_04.png"
+##Kotori
+define kot = Character("Kotori")
+###Kotori Uniforme Inverno
+image iKot UI4 = "images/chara/kotori/kotori_01_04.png"
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+#Cenários
+##Cenários Padrões
+##Cenários únicos
+image c01s001 = "images/scenes/01/bg001.png"
 
-define e = Character("Eileen")
+#Efeitos
+##Variaveis Zoom
+define zN = 0.8
+define zAtv = 0.83
+##Variaveis Posicao
+define yN = 0.9
+define xN = 0.5
 
+##Position
+transform posC:
+    zoom zN
+    yalign yN
+    xalign xN
+transform posN:
+    zoom zN
+    yalign yN
+transform posAtv:
+    zoom zAtv
+    yalign yN
+##Dissolves
+define slowDis = Dissolve(1)
+define nDis = Dissolve(.5)
 
-# The game starts here.
-
+# Inicio do jogo
 label start:
+    scene c01s001
+    with slowDis
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    pause 1
 
-    scene bg room
+    show iKot UI4 at posN:
+        xalign 1.1
+    show iHon UI3 at posC
+    show iUmi UI4 at posN:
+        xalign -0.08
+    with slowDis
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    show iHon at posAtv
 
-    show eileen happy
+    hon "Ô, na moral memo, alguém ae sabe ler japonês pra dizer o que está escrito?"
 
-    # These display lines of dialogue.
+    show iHon at posN
+    show iUmi at posAtv:
+        xalign -0.12
 
-    e "You've created a new Ren'Py game."
+    umi "Bom, só tá dizendo que o Criança Esperança vai parar de sustentar a escola"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    show iHon UI4
 
-    # This ends the game.
+    umi "E ela vai fechar"
 
+    # Fim do jogo
     return
