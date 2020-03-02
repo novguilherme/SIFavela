@@ -168,7 +168,7 @@ label cap01cena002:
 
     show iHon UI2
 
-    hon "Agente vai salvar a escola gravando um desenho japonês!"
+    hon "Agente vai salvar a escola gravando um desenho japonês nela!"
 
     show iHon at posN
     show iUmi UI2 at posAtvL
