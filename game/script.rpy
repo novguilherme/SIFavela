@@ -2,16 +2,22 @@
 ##Honoka
 define hon = Character("Honoka")
 ###Honoka Uniforme Inverno
+image iHon UI1 = "images/chara/honoka/honoka_01_01.png"
+image iHon UI2 = "images/chara/honoka/honoka_01_02.png"
 image iHon UI3 = "images/chara/honoka/honoka_01_03.png"
 image iHon UI4 = "images/chara/honoka/honoka_01_04.png"
 ##Umi
 define umi = Character("Umi")
 ###Umi Uniforme Inverno
+image iUmi UI1 = "images/chara/umi/umi_01_01.png"
+image iUmi UI2 = "images/chara/umi/umi_01_02.png"
 image iUmi UI3 = "images/chara/umi/umi_01_03.png"
 image iUmi UI4 = "images/chara/umi/umi_01_04.png"
 ##Kotori
 define kot = Character("Kotori")
 ###Kotori Uniforme Inverno
+image iKot UI1 = "images/chara/kotori/kotori_01_01.png"
+image iKot UI2 = "images/chara/kotori/kotori_01_02.png"
 image iKot UI3 = "images/chara/kotori/kotori_01_03.png"
 image iKot UI4 = "images/chara/kotori/kotori_01_04.png"
 #Duplas
@@ -19,12 +25,14 @@ define kotUmi = Character("Kotori e Umi")
 
 #Cenários
 ##Cenários Padrões
+image bgClass = "images/scenes/classroom.png"
 ##Cenários únicos
 image c01s001 = "images/scenes/01/bg001.png"
 image c01s002 = "images/scenes/01/bg002.png"
 
 #Músicas
 define bgmMain = "sounds/bgm/main story.mp3"
+define bgmTuto = "sounds/bgm/tutorial.mp3"
 
 #Balões de expressões
 image bubble1 = "images/bubbles/bubble1.png"
@@ -60,12 +68,28 @@ transform posC:
     zoom zN
     yalign yN
     xalign xN
+transform posR:
+    zoom zN
+    yalign yN
+    xalign 1.5
+transform posL:
+    zoom zN
+    yalign yN
+    xalign -0.5
 transform posN:
     zoom zN
     yalign yN
 transform posAtv:
     zoom zAtv
     yalign yN
+transform posAtvL:
+    zoom zAtv
+    yalign yN
+    xalign -0.57
+transform posAtvR:
+    zoom zAtv
+    yalign yN
+    xalign 1.57
 ##Dissolves
 define slowDis = Dissolve(1)
 define nDis = Dissolve(.5)
@@ -73,6 +97,9 @@ define fastDis = Dissolve(.2)
 
 # Inicio do jogo
 label start:
+    #Pular para cena trabalhando no momento, comentar quando for publicar no git
+    #jump cap01cena002
+
     play music bgmMain
 
     scene c01s001
@@ -95,14 +122,14 @@ label start:
     show iUmi at posAtv:
         xalign -0.12
 
-    umi "Bom, só tá dizendo que o Criança Esperança vai parar de sustentar a escola"
+    umi "Bom, só tá dizendo que o Criança Esperança vai parar de sustentar a escola..."
 
     play sound sBubble6
     show bubble6 at posBubbles:
         xalign 0.4
     with fastDis
 
-    umi "E ela vai fechar"
+    umi "E ela vai fechar."
 
     hide bubble6
 
@@ -124,6 +151,34 @@ label start:
 
     hon "Onde eu vou vender crack agora!?"
     hon "Eu vou quebrar velho!"
+
+label cap01cena002:
+    #stop music fadeout 1.0
+    #play music bgmTuto
+
+    scene bgClass
+    show iKot UI1 at posR
+    show iHon UI1 at posC
+    show iUmi UI1 at posL
+    with fade
+
+    show iHon at posAtv
+
+    hon "Calma, eu tive uma idéia!"
+
+    show iHon UI2
+
+    hon "Agente vai salvar a escola gravando um desenho japonês!"
+
+    show iHon at posN
+    show iUmi UI2 at posAtvL
+
+    umi "Okay, e que tipo de desenho?"
+
+    show iUmi at posL
+    show iKot UI2 at posAtvR
+
+    kot ""
 
     # Fim do jogo
     return
