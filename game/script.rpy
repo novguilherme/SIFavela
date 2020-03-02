@@ -6,6 +6,7 @@ image iHon UI1 = "images/chara/honoka/honoka_01_01.png"
 image iHon UI2 = "images/chara/honoka/honoka_01_02.png"
 image iHon UI3 = "images/chara/honoka/honoka_01_03.png"
 image iHon UI4 = "images/chara/honoka/honoka_01_04.png"
+image iHon UI5 = "images/chara/honoka/honoka_01_05.png"
 ##Umi
 define umi = Character("Umi")
 ###Umi Uniforme Inverno
@@ -52,8 +53,13 @@ define sBubble7 = "sounds/bubbles/bubble7.mp3"
 image bubble8 = "images/bubbles/bubble8.png"
 define sBubble8 = "sounds/bubbles/bubble8.mp3"
 ##Aparecer Balões
+define yBubbles = 0.2
 transform posBubbles:
-    yalign 0.2
+    yalign yBubbles
+    xalign 0.4
+transform posBubblesL:
+    yalign yBubbles
+    xalign 0.02
 
 #Efeitos
 ##Variaveis Zoom
@@ -98,7 +104,7 @@ define fastDis = Dissolve(.2)
 # Inicio do jogo
 label start:
     #Pular para cena trabalhando no momento, comentar quando for publicar no git
-    #jump cap01cena002
+    jump cap01cena002
 
     play music bgmMain
 
@@ -125,8 +131,7 @@ label start:
     umi "Bom, só tá dizendo que o Criança Esperança vai parar de sustentar a escola..."
 
     play sound sBubble6
-    show bubble6 at posBubbles:
-        xalign 0.4
+    show bubble6 at posBubbles
     with fastDis
 
     umi "E ela vai fechar."
@@ -178,7 +183,40 @@ label cap01cena002:
     show iUmi at posL
     show iKot UI2 at posAtvR
 
-    kot ""
+    kot "Já sei!"
+
+    show iHon UI5
+
+    pause 0
+
+    play sound sBubble6
+    show bubble6 at posBubbles
+    with fastDis
+
+    kot "Que tal um desenho onde garotas burras se apaixonam por um cara que não tem nada de interessante e ficam enrolando a vida inteira para contar que gostam dele?"
+
+    hide bubble6
+    show iKot at posR
+    show iUmi UI4 at posAtvL
+
+    pause 0
+
+    play sound sBubble1
+    show bubble1 at posBubblesL
+    with fastDis
+
+    umi "Agente não ia conseguir produzir algo tão original."
+
+    hide bubble1
+    show iUmi at posL
+    show iKot UI1 at posAtvR
+
+    kot "ah... então bora fazer um show de mini saia."
+
+    show iKot at posR
+    show iHon UI2 at posAtv
+
+    hon "Bora!"
 
     # Fim do jogo
     return
