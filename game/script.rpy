@@ -7,10 +7,12 @@ image iHon UI4 = "images/chara/honoka/honoka_01_04.png"
 ##Umi
 define umi = Character("Umi")
 ###Umi Uniforme Inverno
+image iUmi UI3 = "images/chara/umi/umi_01_03.png"
 image iUmi UI4 = "images/chara/umi/umi_01_04.png"
 ##Kotori
 define kot = Character("Kotori")
 ###Kotori Uniforme Inverno
+image iKot UI3 = "images/chara/kotori/kotori_01_03.png"
 image iKot UI4 = "images/chara/kotori/kotori_01_04.png"
 #Duplas
 define kotUmi = Character("Kotori e Umi")
@@ -111,7 +113,8 @@ label start:
     hide iHon
     with zoomout
 
-    show iUmi
+    show iKot UI3
+    show iUmi UI3
     with vpunch
 
     kotUmi "HONOKA!"
