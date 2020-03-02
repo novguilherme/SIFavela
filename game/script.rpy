@@ -104,7 +104,7 @@ define fastDis = Dissolve(.2)
 # Inicio do jogo
 label start:
     #Pular para cena trabalhando no momento, comentar quando for publicar no git
-    jump cap01cena002
+    #jump cap01cena002
 
     play music bgmMain
 
