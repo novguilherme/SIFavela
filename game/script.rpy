@@ -26,13 +26,17 @@ define kotUmi = Character("Kotori e Umi")
 
 #Cenários
 ##Cenários Padrões
+image bgLogo = "images/scenes/logo.png"
 image bgClass = "images/scenes/classroom.png"
 ##Cenários únicos
+image c01thumb = "images/scenes/01/thumb.png"
 image c01s001 = "images/scenes/01/bg001.png"
 image c01s002 = "images/scenes/01/bg002.png"
+image c01s003 = "images/scenes/01/bg003.png"
 
 #Músicas
 define bgmMain = "sounds/bgm/main story.mp3"
+define bgmMedley = "sounds/bgm/medley festival.mp3"
 define bgmTuto = "sounds/bgm/tutorial.mp3"
 
 #Balões de expressões
@@ -128,7 +132,7 @@ label start:
     show iUmi at posAtv:
         xalign -0.12
 
-    umi "Bom, só tá dizendo que o Criança Esperança vai parar de sustentar a escola..."
+    umi "Bom, só tá dizendo que o Criança Esperança vai parar de sustentar a escola…"
 
     play sound sBubble6
     show bubble6 at posBubbles
@@ -207,16 +211,54 @@ label cap01cena002:
 
     umi "Agente não ia conseguir produzir algo tão original."
 
+    show c01s003:
+        xalign 0
+        yalign 0
+    pause 0.2
+    hide c01s003
+
     hide bubble1
     show iUmi at posL
     show iKot UI1 at posAtvR
 
-    kot "ah... então bora fazer um show de mini saia."
+    kot "Ah… então bora fazer um show de mini saia."
 
     show iKot at posR
     show iHon UI2 at posAtv
 
     hon "Bora!"
+
+    show iHon at posN
+    show iUmi UI4 at posAtvL
+
+    umi "E quem vai se apre…{w=0.5}{nw}"
+
+    show iUmi UI3 at posAtvL
+
+    umi "Opa… Não não, pera ae, eu não concordei com isso! Honoka!"
+
+label cap01thumb:
+    window hide
+    $ quick_menu = False
+    stop music
+    play music "<from 1>"+bgmMedley
+
+    scene bgLogo
+
+    pause 2
+
+    scene c01thumb
+    with slowDis
+
+    pause
+
+    scene black
+    with slowDis
+
+    pause 0.5
+
+    #window show
+    #$ quick_menu = True
 
     # Fim do jogo
     return

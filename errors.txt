@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 83: expected 'comma or end of line' not found.
-    with fastDis
-    ^
+File "game/script.rpy", line 240: menu statement expects a non-empty block.
+    menu hide
+        ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Mar 01 19:20:34 2020
+Wed Mar 04 16:15:54 2020

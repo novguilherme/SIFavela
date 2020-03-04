@@ -1,30 +1,87 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 171, in script
-    show iKot at posAtvR
-  File "game/script.rpy", line 171, in <module>
-    show iKot at posAtvR
-NameError: name 'posAtvR' is not defined
+While loading <'Image' u'images/scenes/01/bg003.png'>:
+  File "game/script.rpy", line 215, in script
+    pause 0.3
+  File "renpy/common/000statements.rpy", line 414, in execute_pause
+    renpy.with_statement(Pause(delay))
+IOError: Couldn't find file 'images/scenes/01/bg003.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 171, in script
-    show iKot at posAtvR
-  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\ast.py", line 1183, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\ast.py", line 1142, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\Jogos\Ren'Py\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 171, in <module>
-    show iKot at posAtvR
-NameError: name 'posAtvR' is not defined
+  File "game/script.rpy", line 215, in script
+    pause 0.3
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
+    self.call("execute")
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 414, in execute_pause
+    renpy.with_statement(Pause(delay))
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
+    clear=clear)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3194, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2094, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 490, in renpy.display.render.render_screen (gen\renpy.display.render.c:6805)
+    rv = render(root, width, height, st, st)
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\transition.py", line 87, in render
+    return null_render(self, width, height, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\transition.py", line 61, in null_render
+    st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 500, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 306, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 583, in render
+    return cache.get(self, render=True)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 266, in get
+    surf = image.load()
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\display\im.py", line 628, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Users\guilherme.nascimento\Desktop\Guilherme\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'images/scenes/01/bg003.png'.
 
-Windows-8-6.2.9200
+Windows-7-6.1.7601-SP1
 Ren'Py 7.3.5.606
 SIFavela 1.0
-Mon Mar 02 00:11:37 2020
+Wed Mar 04 12:23:09 2020
