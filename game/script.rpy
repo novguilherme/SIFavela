@@ -229,7 +229,7 @@ label cap01cena002:
     hon "Bora!"
 
     show iHon at posN
-    show iUmi UI4 at posAtvL
+    show iUmi UI2 at posAtvL
 
     umi "E quem vai se apre…{w=0.5}{nw}"
 
